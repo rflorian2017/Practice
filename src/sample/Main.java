@@ -24,10 +24,12 @@ public class Main {
         System.out.println(showFactorial(3) + " = " + factorial(3));
         // 3 * 2 * 1 = 6
 
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList list = new MyLinkedList<Integer>();
         list.add(1);
         list.add(2);
         list.add(3);
+
+
         list.printList();
 
     }

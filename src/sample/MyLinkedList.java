@@ -4,7 +4,7 @@ public class MyLinkedList {
 
     Node head;
 
-    public void add(int i) {
+    public <T> void add(T i) {
         Node node = new Node(i);
         node.next = null;
 
@@ -22,12 +22,12 @@ public class MyLinkedList {
         }
     }
 
-    class Node {
-        int value;
+    class Node <T> {
+        T value;
 
         Node next;
 
-        public Node(int value) {
+        public Node(T value) {
             this.value = value;
             next = null;
         }
