@@ -1,10 +1,10 @@
 package sample;
 
-public class MyLinkedList {
+public class MyLinkedList <T> {
 
     Node head;
 
-    public <T> void add(T i) {
+    public void add(T i) {
         Node node = new Node(i);
         node.next = null;
 
@@ -22,7 +22,7 @@ public class MyLinkedList {
         }
     }
 
-    class Node <T> {
+    class Node {
         T value;
 
         Node next;
