@@ -13,6 +13,12 @@ class Main2 {
         tree.add(2);
         System.out.println(tree.root.left);
         System.out.println(tree.root.left.value);
+
+        tree.add(5);
+        System.out.println(tree.root.left);
+        System.out.println(tree.root.left.value);
+
+
     }
 }
 
@@ -25,18 +31,24 @@ public class MyTree {
         // add a first element
         if (root == null) {
             root = node;
-        }
-        else {
+        } else {
             add(root, node);
         }
     }
 
     private void add(Node root, Node newNode) {
-        if(newNode.value > root.value) {
-            root.right = newNode;
-        }
-        else {
-            root.left = newNode;
+        if (newNode.value > root.value) {
+            if (root.right != null) {
+                add(root.right, newNode);
+            } else {
+                root.right = newNode;
+            }
+        } else {
+            if (root.left != null) {
+                add(root.left, newNode);
+            } else {
+                root.left = newNode;
+            }
         }
     }
 
