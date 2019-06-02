@@ -16,7 +16,7 @@ return [deer, deal].
 Hint: Try preprocessing the dictionary into a more efficient data structure to speed up queries.
      */
     public static void main(String[] args) {
-        String[] strings = {"dog", "deer", "deal"}; 
+        String[] strings = {"dog", "deer", "deal"};
         String query = "de";
 
         for (int i = 0; i < strings.length; i++) {
