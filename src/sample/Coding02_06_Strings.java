@@ -4,24 +4,24 @@ public class Coding02_06_Strings {
 
     public static void main(String[] args) {
         String str = "amaaamab";
-        System.out.println(findPosition(str, "c"));
+        System.out.println(findPosition(str, "a", 0));
 
         // this is correct
-        System.out.println(str.lastIndexOf("ma"));
+        System.out.println(str.lastIndexOf("a"));
     }
 
-    static int findPosition(String text, String pattern) {
+    static int findPosition(String text, String pattern, int start) {
 
-        int position = text.indexOf(pattern);
-        int counter = 0;
-        if(position != -1 ) {
-            counter = position + pattern.length();
-            counter += findPosition(text.substring(position + 1), pattern);
-        }
-        else {
-            return -1;
+        int position = text.indexOf(pattern, start);
+
+        if (position == -1)
+            return position;
+        else if (text.indexOf(pattern, position + 1) != -1) {
+            position = findPosition(text, pattern, position + 1);
+        } else {
+            return position;
         }
 
-        return counter;
+        return position;
     }
 }
